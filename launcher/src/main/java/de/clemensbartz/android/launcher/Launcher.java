@@ -598,7 +598,7 @@ public final class Launcher extends Activity {
         @Override
         public void onCreateContextMenu(final ContextMenu contextMenu, final View view, final ContextMenu.ContextMenuInfo contextMenuInfo) {
             contextMenu.add(0, ITEM_CHOOSE_WIDGET, 0, R.string.choose_widget);
-            contextMenu.add(0, ITEM_REMOVE_WIDGET, 0, R.string.remove_widget);
+            if (model.getAppWidgetId() != -1) contextMenu.add(0, ITEM_REMOVE_WIDGET, 0, R.string.remove_widget);
         }
     }
 
