@@ -1,0 +1,40 @@
+?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015  Clemens Bartz
+  ~
+  ~     This program is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     This program is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <string name="app_name">Essential Launcher</string>
+    <string name="open_drawer">Alle apps tonen</string>
+    <string name="uninstall">Verwijderen</string>
+    <string name="appinfo">App-informatie tonen</string>
+    <string name="unassigned_dock">Niet-toegewezen dock-item</string>
+    <string name="resetcounter">Teller terugzetten</string>
+    <string name="showInDock">Tonen op dock</string>
+    <string name="drawer_item_image" translatable="false">Icon</string>
+    <string name="remove_widget">Widget verwijderen</string>
+    <string name="choose_widget">Widget kiezen</string>
+    <string name="showInDockSticky">Vastzetten</string>
+    <string name="adjustWidgetLayout" translatable="false">Layout widget...</string>
+    <string name="widgetLayoutTopQuarter" translatable="false">Top 1/4</string>
+    <string name="widgetLayoutTopThird" translatable="false">Top 1/3</string>
+    <string name="widgetLayoutTopHalf" translatable="false">Top 1/2</string>
+    <string name="widgetLayoutFull" translatable="false">Full Screen</string>
+    <string name="widgetLayoutCenter" translatable="false">Center 1/2</string>
+    <string name="widgetLayoutBottomHalf" translatable="false">Bottom 1/2</string>
+    <string name="widgetLayoutBottomThird" translatable="false">Bottom 1/3</string>
+    <string name="widgetLayoutBottomQuarter" translatable="false">Bottom 1/4</string>
+</resources>
