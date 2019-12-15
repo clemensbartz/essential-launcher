@@ -57,16 +57,16 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
     public static final String KEY_DRAWER_LAYOUT = "drawerLayout";
 
     /** Id to identify the home layout. */
-    private static final int SHOW_STATUSBAR_ID = 0;
+    private static final int SHOW_STATUS_BAR_ID = 0;
     /** Id to identify the grid layout. */
-    public static final int SHOW_DRAWER_ID = 1;
+    private static final int SHOW_DRAWER_ID = 1;
     /** Id to identify the list layout. */
-    public static final int SHOW_SEARCH_ID = 2;
+    private static final int SHOW_SEARCH_ID = 2;
 
     /** Keys and default values for gestures **/
     public enum Gestures {
         SWIPE_UP("gestureSwipeUp", 1, SHOW_DRAWER_ID),
-        SWIPE_DOWN("gestureSwipeDown", 2, SHOW_STATUSBAR_ID);
+        SWIPE_DOWN("gestureSwipeDown", 2, SHOW_STATUS_BAR_ID);
 
         private final String key;
         private final Integer id;
@@ -78,13 +78,13 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
             this.defaultValue = defaultValue;
         }
 
-        public String getKey() {
+        String getKey() {
             return key;
         }
-        public Integer getId() {
+        Integer getId() {
             return id;
         }
-        public Integer getDefaultValue() {
+        Integer getDefaultValue() {
             return defaultValue;
         }
     }
@@ -200,7 +200,7 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
     /**
      * Show search on the detail page
      */
-    public void showSearch() {
+    private void showSearch() {
         showDetail();
         if (actionBarMenu != null)
             actionBarMenu.findItem(R.id.app_bar_search).expandActionView();
@@ -209,7 +209,7 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
     /**
      * Show assigned gesture target page
      */
-    public void showGestureTarget(final Gestures gesture) {
+    private void showGestureTarget(final Gestures gesture) {
         final int gestureTarget = sharedPreferencesDAO.getInt(gesture.getKey(), gesture.getDefaultValue());
 
         switch(gestureTarget) {

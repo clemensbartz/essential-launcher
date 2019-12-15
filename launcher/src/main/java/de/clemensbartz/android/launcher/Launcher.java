@@ -403,9 +403,15 @@ public final class Launcher extends Activity {
 
                 return true;
             case R.id.abm_swipe_up:
+                if (viewController == null) {
+                    return super.onOptionsItemSelected(item);
+                }
                 viewController.requestGestureChange(ViewController.Gestures.SWIPE_UP);
                 return true;
             case R.id.abm_swipe_down:
+                if (viewController == null) {
+                    return super.onOptionsItemSelected(item);
+                }
                 viewController.requestGestureChange(ViewController.Gestures.SWIPE_DOWN);
                 return true;
             case R.id.abm_grid_toggle:
