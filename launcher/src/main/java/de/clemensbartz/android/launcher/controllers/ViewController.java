@@ -281,17 +281,14 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
      * @param gestureKey the gesture key
      * @param gestureTargetId the gesture target id
      */
-    private void setGestureTarget(@NonNull final String gestureKey, final int gestureTargetId) {
+    public void setGestureTarget(@NonNull final String gestureKey, final int gestureTargetId) {
         sharedPreferencesDAO.putInt(gestureKey, gestureTargetId);
     }
 
     /**
      * Request to layout the widget.
      */
-    public void requestGestureChange(final Gestures gesture) {
-        if (gesture == null)
-            return;
-
+    public void requestGestureChange(@NonNull final Gestures gesture) {
         final PopupMenu popupMenu = new PopupMenu(launcher, launcher.findViewById(R.id.topFiller));
 
         final int currentGestureTarget = sharedPreferencesDAO.getInt(gesture.getKey(), gesture.getDefaultValue());
