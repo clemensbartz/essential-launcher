@@ -81,9 +81,9 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
         String getKey() {
             return key;
         }
-        Integer getId() {
-            return id;
-        }
+//        Integer getId() {
+//            return id;
+//        }
         Integer getDefaultValue() {
             return defaultValue;
         }
@@ -281,7 +281,7 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
      * @param gestureKey the gesture key
      * @param gestureTargetId the gesture target id
      */
-    public void setGestureTarget(final String gestureKey, final int gestureTargetId) {
+    private void setGestureTarget(@NonNull final String gestureKey, final int gestureTargetId) {
         sharedPreferencesDAO.putInt(gestureKey, gestureTargetId);
     }
 
@@ -289,6 +289,9 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
      * Request to layout the widget.
      */
     public void requestGestureChange(final Gestures gesture) {
+        if (gesture == null)
+            return;
+
         final PopupMenu popupMenu = new PopupMenu(launcher, launcher.findViewById(R.id.topFiller));
 
         final int currentGestureTarget = sharedPreferencesDAO.getInt(gesture.getKey(), gesture.getDefaultValue());
@@ -322,12 +325,12 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
     }
 
     @Override
-    public void onLongPress(MotionEvent e) {
+    public void onLongPress(@Nullable MotionEvent e) {
         showDetail();
     }
 
     @Override
-    public boolean onDown(MotionEvent e) {
+    public boolean onDown(@Nullable MotionEvent e) {
         return true;
     }
 
