@@ -213,7 +213,7 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
         final int gestureTarget = sharedPreferencesDAO.getInt(gesture.getKey(), gesture.getDefaultValue());
 
         switch(gestureTarget) {
-            case SHOW_STATUSBAR_ID:
+            case SHOW_STATUS_BAR_ID:
                 expandStatusBar();
                 break;
             case SHOW_DRAWER_ID:
@@ -293,7 +293,7 @@ public final class ViewController extends GestureDetector.SimpleOnGestureListene
 
         final int currentGestureTarget = sharedPreferencesDAO.getInt(gesture.getKey(), gesture.getDefaultValue());
 
-        addGesturePopupMenuItem(popupMenu, SHOW_STATUSBAR_ID, currentGestureTarget, R.string.showStatusbar);
+        addGesturePopupMenuItem(popupMenu, SHOW_STATUS_BAR_ID, currentGestureTarget, R.string.showStatusbar);
         addGesturePopupMenuItem(popupMenu, SHOW_DRAWER_ID, currentGestureTarget, R.string.showDrawer);
         addGesturePopupMenuItem(popupMenu, SHOW_SEARCH_ID, currentGestureTarget, R.string.showSearch);
 
