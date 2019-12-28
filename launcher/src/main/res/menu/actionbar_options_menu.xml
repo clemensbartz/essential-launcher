@@ -24,15 +24,25 @@
         android:icon="@drawable/ic_search"
         android:showAsAction="always|collapseActionView"
         android:title="@string/search" />
-    <item
-        android:id="@+id/abm_choose_widget"
-        android:title="@string/chooseWidget" />
-    <item
-        android:id="@+id/abm_layout_widget"
-        android:title="@string/layoutWidget" />
-    <item
-        android:id="@+id/abm_remove_widget"
-        android:title="@string/removeWidget" />
+    <group>
+        <item
+            android:id="@+id/abm_choose_widget"
+            android:title="@string/chooseWidget" />
+        <item
+            android:id="@+id/abm_layout_widget"
+            android:title="@string/layoutWidget" />
+        <item
+            android:id="@+id/abm_remove_widget"
+            android:title="@string/removeWidget" />
+    </group>
+    <group>
+        <item
+            android:id="@+id/abm_swipe_up"
+            android:title="@string/gestureSwipeUp" />
+        <item
+            android:id="@+id/abm_swipe_down"
+            android:title="@string/gestureSwipeDown" />
+    </group>
     <item
         android:id="@+id/abm_grid_toggle"
         android:checkable="true"

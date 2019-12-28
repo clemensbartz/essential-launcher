@@ -39,4 +39,9 @@
     <string name="pinApp">Pin app…</string>
     <string name="search">Search</string>
     <string name="showAllDockIcons">Show all dock icons</string>
+    <string name="gestureSwipeUp" translatable="false">Swipe up gesture…</string>
+    <string name="gestureSwipeDown" translatable="false">Swipe down gesture…</string>
+    <string name="showStatusbar" translatable="false">Show notifications</string>
+    <string name="showDrawer" translatable="false">Show app drawer</string>
+    <string name="showSearch" translatable="false">Show search</string>
 </resources>

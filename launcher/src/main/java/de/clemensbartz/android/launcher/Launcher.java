@@ -119,7 +119,7 @@ public final class Launcher extends Activity {
         sharedPreferencesDAO = SharedPreferencesDAO.getInstance(getPreferences(Context.MODE_PRIVATE));
 
         // Set up view handling
-        viewController = new ViewController((ViewFlipper) findViewById(R.id.vsLauncher));
+        viewController = new ViewController((ViewFlipper) findViewById(R.id.vsLauncher), this, sharedPreferencesDAO);
         viewController.setStatusBarSystemService(SystemServiceUtil.getSystemServiceOrDefault(this, ViewController.SYSTEM_SERVICE_NAME_STATUS_BAR, null));
         gestureDetector = new GestureDetector(this, viewController);
 
@@ -401,6 +401,18 @@ public final class Launcher extends Activity {
 
                 viewController.showHome();
 
+                return true;
+            case R.id.abm_swipe_up:
+                if (viewController == null) {
+                    return super.onOptionsItemSelected(item);
+                }
+                viewController.requestGestureChange(ViewController.Gestures.SWIPE_UP);
+                return true;
+            case R.id.abm_swipe_down:
+                if (viewController == null) {
+                    return super.onOptionsItemSelected(item);
+                }
+                viewController.requestGestureChange(ViewController.Gestures.SWIPE_DOWN);
                 return true;
             case R.id.abm_grid_toggle:
                 if (viewController == null || sharedPreferencesDAO == null) {
