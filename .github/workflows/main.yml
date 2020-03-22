@@ -60,8 +60,15 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: get branches
+        run: git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
       - name: ${{ matrix.devices.profile }}
         uses: reactivecircus/android-emulator-runner@v2
+        env:
+          SONAR_LOGIN: ${{ secrets.SONAR_LOGIN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           api-level: ${{ matrix.devices.api-level }}
           target: ${{ matrix.devices.target }}
@@ -69,4 +76,25 @@ jobs:
           profile: ${{ matrix.devices.profile }}
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
           disable-animations: true
-          script: ./gradlew connectedCheck
+          script: ./gradlew build lintRelease test connectedCheck jacocoTestReport sonarqube -x lint --stacktrace
+  uploadArtifact:
+    needs: connectedCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Upload launcher-debug.apk
+        uses: actions/upload-artifact@v1
+        with:
+          name: launcher-debug.apk
+          path: launcher/build/outputs/apk/debug/launcher-debug.apk
+      - name: Upload launcher-release-unsinged.apk
+        uses: actions/upload-artifact@v1
+        with:
+          name: launcher-release-unsinged.apk
+          path: launcher/build/outputs/apk/release/launcher-release-unsigned.apk
