@@ -17,6 +17,8 @@
 
 package de.clemensbartz.android.launcher.callables;
 
+import androidx.annotation.Nullable;
+
 /**
  * Provides the return call for the result.
  * @author Clemens Bartz
@@ -24,5 +26,5 @@ package de.clemensbartz.android.launcher.callables;
  */
 @FunctionalInterface
 public interface CompleteCallback<R> {
-    void onComplete(R result);
+    void onComplete(@Nullable R result);
 }

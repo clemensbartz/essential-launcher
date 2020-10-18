@@ -48,6 +48,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import de.clemensbartz.android.launcher.adapters.DrawerListAdapter;
+import de.clemensbartz.android.launcher.callables.DefaultTaskRunner;
+import de.clemensbartz.android.launcher.callables.LoadSharedPreferencesDAOCallable;
 import de.clemensbartz.android.launcher.controllers.DockController;
 import de.clemensbartz.android.launcher.controllers.DrawerController;
 import de.clemensbartz.android.launcher.controllers.ViewController;
@@ -56,6 +58,7 @@ import de.clemensbartz.android.launcher.daos.SharedPreferencesDAO;
 import de.clemensbartz.android.launcher.listeners.AbsListViewOnCreateContextMenuListener;
 import de.clemensbartz.android.launcher.listeners.AdapterViewOnItemClickListener;
 import de.clemensbartz.android.launcher.listeners.SearchViewOnActionExpandListener;
+import de.clemensbartz.android.launcher.models.SharedPreferencesLoadedValuesResult;
 import de.clemensbartz.android.launcher.observers.LinearLayoutSectionsObserver;
 import de.clemensbartz.android.launcher.receivers.PackageChangedBroadcastReceiver;
 import de.clemensbartz.android.launcher.callables.FilterDrawerListAdapterTask;
@@ -184,6 +187,11 @@ public final class Launcher extends Activity {
         super.onStart();
 
         // Initialize DAOs
+        DefaultTaskRunner.INSTANCE.executeCall(
+                new LoadSharedPreferencesDAOCallable(sharedPreferencesDAO),
+                this::onSharedPreferencesDAOLoaded,
+                null
+        );
         new LoadSharedPreferencesDAOTask(this, sharedPreferencesDAO, viewController, widgetController).execute();
 
         // Register receivers
@@ -480,6 +488,32 @@ public final class Launcher extends Activity {
         }
 
         return actionBarMenu.findItem(itemID);
+    }
+
+    private void onSharedPreferencesDAOLoaded(@NonNull SharedPreferencesLoadedValuesResult result) {
+        // Update current layout
+        if (viewController != null) {
+            viewController.setCurrentDetailIndex(result.getDrawerLayout());
+        }
+
+        // Update action bar
+        final MenuItem gridMenuItem = getActionBarMenuItem(R.id.abm_grid_toggle);
+
+        if (gridMenuItem != null) {
+            gridMenuItem.setChecked(result.getDrawerLayout() == ViewController.GRID_ID);
+        }
+
+        // Update the widget handling, please note that no widgets could be available, e. g. widgetController is null
+        if (widgetController != null) {
+
+            // Only load widget if one was previously selected
+            if (result.getSelectedWidget() > -1) {
+                widgetController.addHostView(result.getSelectedWidget());
+            }
+
+            // Layout widget
+            widgetController.adjustWidget(result.getWidgetLayout());
+        }
     }
 
     /**

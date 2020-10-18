@@ -17,6 +17,8 @@
 
 package de.clemensbartz.android.launcher.callables;
 
+import androidx.annotation.NonNull;
+
 /**
  * Provides the return call for the exception.
  * @author Clemens Bartz
@@ -24,5 +26,5 @@ package de.clemensbartz.android.launcher.callables;
  */
 @FunctionalInterface
 public interface ExceptionCallback {
-    void onException(Exception exception);
+    void onException(@NonNull Exception exception);
 }
