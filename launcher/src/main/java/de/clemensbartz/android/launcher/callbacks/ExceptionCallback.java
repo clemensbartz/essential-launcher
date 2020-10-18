@@ -15,20 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.clemensbartz.android.launcher.tasks;
-
-import java.util.concurrent.Executors;
+package de.clemensbartz.android.launcher.callbacks;
 
 /**
- * The default runner for all tasks. There is no concurrent running planned
- * as database and filesystem are affecting each other.
+ * Provides the return call for the exception.
  * @author Clemens Bartz
  * @since 2.3
  */
-public final class DefaultTaskRunner extends TaskRunner {
-    public static final DefaultTaskRunner INSTANCE = new DefaultTaskRunner();
-
-    private DefaultTaskRunner() {
-        super(Executors.newSingleThreadExecutor());
-    }
+@FunctionalInterface
+public interface ExceptionCallback {
+    void onException(Exception exception);
 }

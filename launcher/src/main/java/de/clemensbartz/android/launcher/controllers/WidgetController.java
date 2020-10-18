@@ -37,8 +37,8 @@ import androidx.annotation.Nullable;
 import de.clemensbartz.android.launcher.Launcher;
 import de.clemensbartz.android.launcher.R;
 import de.clemensbartz.android.launcher.daos.SharedPreferencesDAO;
-import de.clemensbartz.android.launcher.tasks.CreateWidgetAsyncTask;
-import de.clemensbartz.android.launcher.tasks.ShowWidgetListAsPopupMenuTask;
+import de.clemensbartz.android.launcher.callbacks.CreateWidgetAsyncTask;
+import de.clemensbartz.android.launcher.callbacks.ShowWidgetListAsPopupMenuTask;
 import de.clemensbartz.android.launcher.util.BundleUtil;
 import de.clemensbartz.android.launcher.util.IntentUtil;
 

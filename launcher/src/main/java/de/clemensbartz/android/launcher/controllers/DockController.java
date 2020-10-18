@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import de.clemensbartz.android.launcher.daos.SharedPreferencesDAO;
 import de.clemensbartz.android.launcher.listeners.DockOnCreateContextMenuListener;
 import de.clemensbartz.android.launcher.models.ApplicationModel;
-import de.clemensbartz.android.launcher.tasks.LoadApplicationModelIconIntoImageViewTask;
+import de.clemensbartz.android.launcher.callbacks.LoadApplicationModelIconIntoImageViewTask;
 import de.clemensbartz.android.launcher.util.IntentUtil;
 
 /**

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018  Clemens Bartz
+ * Copyright (C) 2020  Clemens Bartz
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,9 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+package de.clemensbartz.android.launcher.callbacks;
+
 /**
- * Contains (async) tasks.
+ * Provides the return call for the result.
  * @author Clemens Bartz
- * @since 1.5
+ * @since 2.3
  */
-package de.clemensbartz.android.launcher.tasks;
+@FunctionalInterface
+public interface CompleteCallback<R> {
+    void onComplete(R result);
+}
