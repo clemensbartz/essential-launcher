@@ -38,13 +38,4 @@
     <suppress checks="VisibilityModifier"
         files="DrawerListAdapter.java"
         lines="381,383" />
-    <suppress checks="VisibilityModifier"
-        files="LoadDockTask.java"
-        lines="152,154" />
-    <suppress checks="VisibilityModifier"
-        files="LoadSharedPreferencesDAOTask.java"
-        lines="131,133,135" />
-    <suppress checks="VisibilityModifier"
-        files="ShowWidgetListAsPopupMenuTask.java"
-        lines="177,179,181" />
 </suppressions>
