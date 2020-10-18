@@ -33,14 +33,16 @@ import java.util.concurrent.Executor;
  */
 public abstract class TaskRunner {
 
+    /** The executor for the tasks. */
     private final Executor executor;
+    /** The handler for the main thread. */
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     /**
      * Create a new runner with an executor.
      * @param executor the executor
      */
-    TaskRunner(Executor executor) {
+    TaskRunner(final Executor executor) {
         this.executor = executor;
     }
 
@@ -51,7 +53,7 @@ public abstract class TaskRunner {
      * @param exceptionCallback the optional callback when an error occurs
      * @param <R> the return type
      */
-    public <R> void executeCall(@NonNull final Callable<R> callable, @NonNull final CompleteCallback<R> completeCallback, @Nullable final ExceptionCallback exceptionCallback) {
+    public final <R> void executeCall(@NonNull final Callable<R> callable, @NonNull final CompleteCallback<R> completeCallback, @Nullable final ExceptionCallback exceptionCallback) {
         executor.execute(() -> {
             try {
                 final R result = callable.call();

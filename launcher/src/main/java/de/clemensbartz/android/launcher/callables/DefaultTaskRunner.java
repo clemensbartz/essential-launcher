@@ -26,6 +26,7 @@ import java.util.concurrent.Executors;
  * @since 2.3
  */
 public final class DefaultTaskRunner extends TaskRunner {
+    /** The instance of this runner. */
     public static final DefaultTaskRunner INSTANCE = new DefaultTaskRunner();
 
     private DefaultTaskRunner() {

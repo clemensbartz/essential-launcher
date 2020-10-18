@@ -22,7 +22,7 @@ package de.clemensbartz.android.launcher.models;
  * @author Clemens Bartz
  * @since 2.3
  */
-public class SharedPreferencesLoadedValuesResult {
+public final class SharedPreferencesLoadedValuesResult {
     /** The selected widget. */
     private final int selectedWidget;
     /** The layout for the widget. */
@@ -30,20 +30,38 @@ public class SharedPreferencesLoadedValuesResult {
     /** The grid layout. */
     private final int drawerLayout;
 
+    /**
+     * Create a new result.
+     * @param selectedWidget the index of the selected widget
+     * @param widgetLayout the index of the selected layout
+     * @param drawerLayout the index of the drawer layout
+     */
     public SharedPreferencesLoadedValuesResult(int selectedWidget, int widgetLayout, int drawerLayout) {
         this.selectedWidget = selectedWidget;
         this.widgetLayout = widgetLayout;
         this.drawerLayout = drawerLayout;
     }
 
+    /**
+     *
+     * @return the selected widget
+     */
     public int getSelectedWidget() {
         return selectedWidget;
     }
 
+    /**
+     *
+     * @return the selected widget layout
+     */
     public int getWidgetLayout() {
         return widgetLayout;
     }
 
+    /**
+     *
+     * @return the selected drawer layout
+     */
     public int getDrawerLayout() {
         return drawerLayout;
     }

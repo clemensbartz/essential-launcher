@@ -26,5 +26,9 @@ import androidx.annotation.NonNull;
  */
 @FunctionalInterface
 public interface ExceptionCallback {
+    /**
+     * Callback when an exception occurs.
+     * @param exception the exception which was thrown
+     */
     void onException(@NonNull Exception exception);
 }

@@ -490,7 +490,7 @@ public final class Launcher extends Activity {
         return actionBarMenu.findItem(itemID);
     }
 
-    private void onSharedPreferencesDAOLoaded(@NonNull SharedPreferencesLoadedValuesResult result) {
+    private void onSharedPreferencesDAOLoaded(@NonNull final SharedPreferencesLoadedValuesResult result) {
         // Update current layout
         if (viewController != null) {
             viewController.setCurrentDetailIndex(result.getDrawerLayout());

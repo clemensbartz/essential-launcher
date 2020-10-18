@@ -42,7 +42,7 @@ public final class LoadSharedPreferencesDAOCallable implements Callable<SharedPr
      * Create a new callable.
      * @param sharedPreferencesDAO the shared preference DAO to load the values from
      */
-    public LoadSharedPreferencesDAOCallable(@NonNull SharedPreferencesDAO sharedPreferencesDAO) {
+    public LoadSharedPreferencesDAOCallable(@NonNull final SharedPreferencesDAO sharedPreferencesDAO) {
         this.sharedPreferencesDAOWeakReference = new WeakReference<>(sharedPreferencesDAO);
     }
 

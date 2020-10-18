@@ -23,8 +23,13 @@ import androidx.annotation.Nullable;
  * Provides the return call for the result.
  * @author Clemens Bartz
  * @since 2.3
+ * @param <R> the type of the result
  */
 @FunctionalInterface
 public interface CompleteCallback<R> {
+    /**
+     * Callback when the result is available.
+     * @param result an optional result
+     */
     void onComplete(@Nullable R result);
 }
