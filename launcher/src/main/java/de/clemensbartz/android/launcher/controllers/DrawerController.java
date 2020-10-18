@@ -25,7 +25,7 @@ import java.lang.ref.WeakReference;
 import de.clemensbartz.android.launcher.adapters.DrawerListAdapter;
 import de.clemensbartz.android.launcher.daos.SharedPreferencesDAO;
 import de.clemensbartz.android.launcher.models.ApplicationModel;
-import de.clemensbartz.android.launcher.callbacks.FilterDrawerListAdapterTask;
+import de.clemensbartz.android.launcher.callables.FilterDrawerListAdapterTask;
 
 /**
  * Controller for handling information in the drawer.

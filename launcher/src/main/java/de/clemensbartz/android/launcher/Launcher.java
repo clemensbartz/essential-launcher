@@ -58,10 +58,10 @@ import de.clemensbartz.android.launcher.listeners.AdapterViewOnItemClickListener
 import de.clemensbartz.android.launcher.listeners.SearchViewOnActionExpandListener;
 import de.clemensbartz.android.launcher.observers.LinearLayoutSectionsObserver;
 import de.clemensbartz.android.launcher.receivers.PackageChangedBroadcastReceiver;
-import de.clemensbartz.android.launcher.callbacks.FilterDrawerListAdapterTask;
-import de.clemensbartz.android.launcher.callbacks.LoadDockTask;
-import de.clemensbartz.android.launcher.callbacks.LoadDrawerListAdapterTask;
-import de.clemensbartz.android.launcher.callbacks.LoadSharedPreferencesDAOTask;
+import de.clemensbartz.android.launcher.callables.FilterDrawerListAdapterTask;
+import de.clemensbartz.android.launcher.callables.LoadDockTask;
+import de.clemensbartz.android.launcher.callables.LoadDrawerListAdapterTask;
+import de.clemensbartz.android.launcher.callables.LoadSharedPreferencesDAOTask;
 import de.clemensbartz.android.launcher.util.IntentUtil;
 import de.clemensbartz.android.launcher.util.StrictModeUtil;
 import de.clemensbartz.android.launcher.util.SystemServiceUtil;

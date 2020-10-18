@@ -31,8 +31,8 @@ import de.clemensbartz.android.launcher.adapters.DrawerListAdapter;
 import de.clemensbartz.android.launcher.controllers.DockController;
 import de.clemensbartz.android.launcher.controllers.DrawerController;
 import de.clemensbartz.android.launcher.daos.SharedPreferencesDAO;
-import de.clemensbartz.android.launcher.callbacks.LoadDockTask;
-import de.clemensbartz.android.launcher.callbacks.LoadDrawerListAdapterTask;
+import de.clemensbartz.android.launcher.callables.LoadDockTask;
+import de.clemensbartz.android.launcher.callables.LoadDrawerListAdapterTask;
 
 /**
  * Receiver for listening for changed packages. This class only holds weak references and

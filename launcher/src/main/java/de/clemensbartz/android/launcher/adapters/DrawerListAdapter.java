@@ -46,7 +46,7 @@ import java.util.concurrent.RejectedExecutionException;
 import de.clemensbartz.android.launcher.R;
 import de.clemensbartz.android.launcher.comparators.LocaledStringComparator;
 import de.clemensbartz.android.launcher.models.ApplicationModel;
-import de.clemensbartz.android.launcher.callbacks.LoadApplicationModelIconIntoImageViewTask;
+import de.clemensbartz.android.launcher.callables.LoadApplicationModelIconIntoImageViewTask;
 import de.clemensbartz.android.launcher.util.LocaleUtil;
 
 /**

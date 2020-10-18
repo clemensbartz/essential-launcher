@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020  Clemens Bartz
+ * Copyright (C) 2018  Clemens Bartz
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,20 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.clemensbartz.android.launcher.callbacks;
-
-import java.util.concurrent.Executors;
-
 /**
- * The default runner for all tasks. There is no concurrent running planned
- * as database and filesystem are affecting each other.
+ * Contains concurrent handling of callables.
  * @author Clemens Bartz
- * @since 2.3
+ * @since 1.5
  */
-public final class DefaultTaskRunner extends TaskRunner {
-    public static final DefaultTaskRunner INSTANCE = new DefaultTaskRunner();
-
-    private DefaultTaskRunner() {
-        super(Executors.newSingleThreadExecutor());
-    }
-}
+package de.clemensbartz.android.launcher.callables;
