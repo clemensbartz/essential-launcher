@@ -1,3 +1,6 @@
+This project is no longer supported. If you want to become a new maintainer, please create a fork. There is still unfinished work on the sonarcloud branch which is already resolving some issues.
+
+
 # Essential Launcher
 
 [![Latest release](https://img.shields.io/github/release/clemensbartz/essential-launcher.svg)](https://github.com/clemensbartz/essential-launcher/releases/latest)
@@ -11,12 +14,6 @@
 
 Essential Launcher is a small launcher for Android. It provides a minimum of functionality.
 
-<a href="https://f-droid.org/packages/de.clemensbartz.android.launcher/" target="_blank">
-<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
-<a href="https://play.google.com/store/apps/details?id=de.clemensbartz.android.launcher" target="_blank">
-<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80"/></a>
-<a href="https://aapks.com/apk/essential-launcher/" target="_blank">
-<img src="https://aapks.com/get.png" alt="Get it on AAPKS.com" height="80"/></a>
 <a href="https://github.com/clemensbartz/essential-launcher/releases/latest">
 <img src="https://raw.githubusercontent.com/clemensbartz/essential-launcher/release/v2.0/promo/graphics/en/get-github.png" alt="Get it on Github.com" height="80"/></a>
 <a href="https://github.com/clemensbartz/essential-launcher/releases.atom">
